@@ -33,6 +33,7 @@ local.properties
 #
 node_modules/
 npm-debug.log
+yarn-error.log
 package-lock.json
 
 # vscode
@@ -42,11 +43,6 @@ jsconfig.json
 
 # BUCK
 buck-out/
-bin/
 \.buckd/
-android/app/libs
-android/keystores/debug.keystore
-
-# yarn
-yarn-error.log
-
+*.keystore
+!debug.keystore
