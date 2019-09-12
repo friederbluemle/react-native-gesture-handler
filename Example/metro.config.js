@@ -1,27 +1,17 @@
-const blacklist = require('metro-config/src/defaults/blacklist');
-const path = require('path');
-const pkg = require('./package.json');
-
-const glob = require('glob-to-regexp');
-
-function getBlacklist() {
-  const nodeModuleDirs = [
-    glob(`${path.resolve(__dirname, '..')}/node_modules/*`),
-    glob(`${path.resolve(__dirname, '..')}/e2e/*`),
-    glob(`${path.resolve(__dirname)}/node_modules/*/node_modules/fbjs/*`),
-    glob(
-      `${path.resolve(
-        __dirname
-      )}/node_modules/*/node_modules/hoist-non-react-statics/*`
-    ),
-  ];
-  return blacklist(nodeModuleDirs);
-}
+/**
+ * Metro configuration for React Native
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ */
 
 module.exports = {
-  resolver: {
-    blacklistRE: getBlacklist(),
-    providesModuleNodeModules: Object.keys(pkg.dependencies),
+  transformer: {
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: false,
+      },
+    }),
   },
-  watchFolders: [path.resolve(__dirname, '..')],
 };
