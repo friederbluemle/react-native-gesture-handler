@@ -76,10 +76,10 @@
     "babel-jest": "16.0.0",
     "babel-preset-react-native": "1.9.0",
     "flow-bin": "^0.56.0",
-    "husky": "^0.14.3",
+    "husky": "^3.0.5",
     "jest": "^24.7.1",
     "jest-react-native": "16.0.0",
-    "lint-staged": "^8.0.0-beta.1",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.13.7",
     "react": "^16.8.6",
     "react-native": "^0.60.0",
@@ -90,8 +90,5 @@
       "prettier --write --print-width 80 --tab-width 2 --single-quote --jsx-bracket-same-line=true --trailing-comma=es5",
       "git add"
     ]
-  },
-  "resolutions": {
-    "fsevents": "1.2.4"
   }
 }
